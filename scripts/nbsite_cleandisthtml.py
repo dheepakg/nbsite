@@ -40,17 +40,6 @@ for folder in (".doctrees", ):
     except:
         pass
 
-for file_ in ():
-    f = os.path.join(htmldir,file_)
-    try:
-        if dry_run:
-            print("would remove", file_)
-        else:
-            print("removing", file_)
-            os.remove(f)
-    except:
-        pass
-
 for path in IGetFiles(htmldir):
     if os.path.splitext(path)[1].lower() == '.ipynb':
         name = path.split(output)[-1]
