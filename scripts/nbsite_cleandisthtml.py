@@ -29,7 +29,7 @@ else:
     print("Removing files from:", htmldir)
 
 # (.doctrees in build folder by default only for sphinx<1.8)
-for folder in (".doctrees", ):
+for folder in (".doctrees", "_sources"):
     d = os.path.join(htmldir,folder)
     try:
         if dry_run:
@@ -37,6 +37,17 @@ for folder in (".doctrees", ):
         else:
             print("removing", folder)
             shutil.rmtree(d)
+    except:
+        pass
+
+for file_ in ():
+    f = os.path.join(htmldir,file_)
+    try:
+        if dry_run:
+            print("would remove", file_)
+        else:
+            print("removing", file_)
+            os.remove(f)
     except:
         pass
 
